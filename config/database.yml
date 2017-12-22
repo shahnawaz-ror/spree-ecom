@@ -1,23 +1,6 @@
-# MySQL. Versions 5.1.10 and up are supported.
-#
-# Install the MySQL driver
-#   gem install mysql2
-#
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem 'mysql2'
-#
-# And be sure to use new-style password hashing:
-#   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
-#
 default: &default
-  adapter: mysql2
-  encoding: utf8
-
-development:
-  <<: *default
-  database: Ecom_development
-
-
-
-production:
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter: mysql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
